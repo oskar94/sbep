@@ -32,7 +32,7 @@ function LoadContent( mode, pnl, ViewPanel,pnlContent  )
 	ViewPanel:Clear( true )
 
 	DebugMessage(mode)
-	local data = file.Read("addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\"..mode,"GAME")
+	local data = file.Read("addons\\"..SBEP.FolderName.. "\\data\\modellists\\"..mode,"GAME")
 		local models = util.KeyValuesToTable(data)
 		for i,j in ipairs(models) do
 			--Based off Vanilla GMod Code
@@ -45,10 +45,10 @@ function LoadContent( mode, pnl, ViewPanel,pnlContent  )
 end
 
 function LoadAllContent( mode, pnl )
-	local lists = file.Find("addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\"..mode.."\\*","GAME")
+	local lists = file.Find("addons\\"..SBEP.FolderName.. "\\data\\modellists\\"..mode.."\\*","GAME")
 
 	for k,v in ipairs(lists) do
-		local data = file.Read("addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\"..mode.."\\"..v,"GAME")
+		local data = file.Read("addons\\"..SBEP.FolderName.. "\\data\\modellists\\"..mode.."\\"..v,"GAME")
 		local models = util.KeyValuesToTable(data)
 		for i,j in ipairs(models) do
 			--Based off Vanilla GMod Code
@@ -68,11 +68,11 @@ function DoMedbridge( pnlContent, tree, node, MainNode, ViewPanel )
 	MedNode.DoClick = function()
 	--TODO: Show all SmallBridge models.
 		ViewPanel:Clear( true )
-		LoadAllContent( "Med",ViewPanel )
+		LoadAllContent( "med",ViewPanel )
 		pnlContent:SwitchPanel( ViewPanel )
 	end
 	--Then cycle through all folders under Data\ModelListt\SMB)
-	local path = "addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\Med\\"
+	local path = "addons\\"..SBEP.FolderName.. "\\data\\modellists\\med\\"
 	local lists = file.Find(path .. "*","GAME")
 
 	for k,v in ipairs(lists) do
@@ -80,7 +80,7 @@ function DoMedbridge( pnlContent, tree, node, MainNode, ViewPanel )
 		local temp = string.Explode( ".txt", v )
 		local name = temp[1]
 		local MyNode = MedNode:AddNode( name, "icon16/folder_database.png") --TODO: Find better image.
-		MyNode.DoClick = function() LoadContent("Med\\"..v.."", MyNode, ViewPanel,pnlContent ) end
+		MyNode.DoClick = function() LoadContent("med\\"..v.."", MyNode, ViewPanel,pnlContent ) end
 
 
 	end
@@ -95,11 +95,11 @@ function DoSmallBridge( pnlContent, tree, node, ViewPanel  )
 	SmbNode.DoClick = function()
 	--TODO: Show all SmallBridge models.
 		ViewPanel:Clear( true )
-		LoadAllContent( "SMB",ViewPanel )
+		LoadAllContent( "smb",ViewPanel )
 		pnlContent:SwitchPanel( ViewPanel )
 	end
 	--Then cycle through all folders under Data\ModelListt\SMB)
-	local path = "addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\SMB\\"
+	local path = "addons\\"..SBEP.FolderName.. "\\data\\modellists\\smb\\"
 	local lists = file.Find(path .. "*","GAME")
 
 
@@ -112,7 +112,7 @@ function DoSmallBridge( pnlContent, tree, node, ViewPanel  )
 		local temp = string.Explode( ".txt", v )
 		local name = temp[1]
 		local MyNode = SmbNode:AddNode( name, "icon16/folder_database.png") --TODO: Find better image.
-		MyNode.DoClick = function() LoadContent("SMB\\"..v.."", MyNode, ViewPanel,pnlContent ) end
+		MyNode.DoClick = function() LoadContent("smb\\"..v.."", MyNode, ViewPanel,pnlContent ) end
 	end
 
 	--Then setup what happens when you click on each node
@@ -127,11 +127,11 @@ function DoModBridge( pnlContent, tree, node, MainNode, ViewPanel )
 	ModNode.DoClick = function()
 	--TODO: Show all SmallBridge models.
 		ViewPanel:Clear( true )
-		LoadAllContent( "Mod",ViewPanel )
+		LoadAllContent( "mod",ViewPanel )
 		pnlContent:SwitchPanel( ViewPanel )
 	end
 	--Then cycle through all folders under Data\ModelListt\SMB)
-	local path = "addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\Mod\\"
+	local path = "addons\\"..SBEP.FolderName.. "\\data\\modellists\\mod\\"
 	local lists = file.Find(path .. "*","GAME")
 
 	for k,v in ipairs(lists) do
@@ -139,7 +139,7 @@ function DoModBridge( pnlContent, tree, node, MainNode, ViewPanel )
 		local temp = string.Explode( ".txt", v )
 		local name = temp[1]
 		local MyNode = ModNode:AddNode( name, "icon16/folder_database.png") --TODO: Find better image.
-		MyNode.DoClick = function() LoadContent("Mod\\"..v.."", MyNode, ViewPanel,pnlContent ) end
+		MyNode.DoClick = function() LoadContent("mod\\"..v.."", MyNode, ViewPanel,pnlContent ) end
 
 
 	end
@@ -151,11 +151,11 @@ function DoSBMP( pnlContent, tree, node, MainNode, ViewPanel )
 	SBMPNode.DoClick = function()
 	--TODO: Show all SmallBridge models.
 		ViewPanel:Clear( true )
-		LoadAllContent( "SBMP",ViewPanel )
+		LoadAllContent( "sbmp",ViewPanel )
 		pnlContent:SwitchPanel( ViewPanel )
 	end
 	--Then cycle through all folders under Data\ModelListt\SMB)
-	local path = "addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\SBMP\\"
+	local path = "addons\\"..SBEP.FolderName.. "\\data\\modellists\\sbmp\\"
 	local lists = file.Find(path .. "*","GAME")
 
 	for k,v in ipairs(lists) do
@@ -163,7 +163,7 @@ function DoSBMP( pnlContent, tree, node, MainNode, ViewPanel )
 		local temp = string.Explode( ".txt", v )
 		local name = temp[1]
 		local MyNode = SBMPNode:AddNode( name, "icon16/folder_database.png") --TODO: Find better image.
-		MyNode.DoClick = function() LoadContent("SBMP\\"..v.."", MyNode, ViewPanel,pnlContent ) end
+		MyNode.DoClick = function() LoadContent("sbmp\\"..v.."", MyNode, ViewPanel,pnlContent ) end
 
 
 	end
@@ -175,11 +175,11 @@ function DoOther( pnlContent, tree, node, MainNode, ViewPanel )
 	OtherNode.DoClick = function()
 	--TODO: Show all SmallBridge models.
 		ViewPanel:Clear( true )
-		LoadAllContent( "Other",ViewPanel )
+		LoadAllContent( "other",ViewPanel )
 		pnlContent:SwitchPanel( ViewPanel )
 	end
 	--Then cycle through all folders under Data\ModelListt\SMB)
-	local path = "addons\\"..SBEP.FolderName.. "\\data\\ModelLists\\Other\\"
+	local path = "addons\\"..SBEP.FolderName.. "\\data\\modellists\\other\\"
 	local lists = file.Find(path .. "*","GAME")
 
 	for k,v in ipairs(lists) do
@@ -187,7 +187,7 @@ function DoOther( pnlContent, tree, node, MainNode, ViewPanel )
 		local temp = string.Explode( ".txt", v )
 		local name = temp[1]
 		local MyNode = OtherNode:AddNode( name, "icon16/folder_database.png") --TODO: Find better image.
-		MyNode.DoClick = function() LoadContent("Other\\"..v.."", MyNode, ViewPanel,pnlContent ) end
+		MyNode.DoClick = function() LoadContent("other\\"..v.."", MyNode, ViewPanel,pnlContent ) end
 
 
 	end

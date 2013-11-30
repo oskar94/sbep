@@ -94,7 +94,7 @@ if CLIENT then
 		LDT.SButtons.finish = vgui.Create("DImageButton", LDT.Frame )
 			LDT.SButtons.finish:SetPos( 5 , 508 )
 			LDT.SButtons.finish:SetSize( 315 , 35 )
-			LDT.SButtons.finish:SetImage( "sbep_icons/Finish.vmt" )
+			LDT.SButtons.finish:SetImage( "sbep_icons/finish.vmt" )
 			LDT.SButtons.finish.DoClick = function()
 												RunConsoleCommand( "SBEP_LiftFinishSystem_ser" )
 												LDT.Frame:Remove()
@@ -124,14 +124,14 @@ if CLIENT then
 		LDT.PButtons.Special.B = vgui.Create("DImageButton", LDT.Frame )
 			LDT.PButtons.Special.B:SetPos( 165 , 188 )   
 			LDT.PButtons.Special.B:SetSize( 155 , 35 )
-			LDT.PButtons.Special.B:SetImage( "sbep_icons/Special.vmt" )
+			LDT.PButtons.Special.B:SetImage( "sbep_icons/special.vmt" )
 			LDT.PButtons.Special.B.DoClick = function()
 													LDT.SFrame.visible = !LDT.SFrame.visible 
 													LDT.SFrame:SetVisible( LDT.SFrame.visible )
 												end
 		
 		LDT.PButtons.Special.Part[1] = vgui.Create("DImageButton", LDT.SFrame )
-			LDT.PButtons.Special.Part[1]:SetImage( "sbep_icons/MV.vmt" )
+			LDT.PButtons.Special.Part[1]:SetImage( "sbep_icons/mv.vmt" )
 			LDT.PButtons.Special.Part[1]:SetPos( 5 , 5 )
 			LDT.PButtons.Special.Part[1]:SetSize( 75 , 75 )
 			LDT.PButtons.Special.Part[1].DoClick = function()
@@ -141,7 +141,7 @@ if CLIENT then
 												end
 
 		LDT.PButtons.Special.Part[2] = vgui.Create("DImageButton", LDT.SFrame )
-			LDT.PButtons.Special.Part[2]:SetImage( "sbep_icons/H.vmt" )
+			LDT.PButtons.Special.Part[2]:SetImage( "sbep_icons/h.vmt" )
 			LDT.PButtons.Special.Part[2]:SetPos( 85 , 5 )
 			LDT.PButtons.Special.Part[2]:SetSize( 75 , 75 )
 			LDT.PButtons.Special.Part[2].DoClick = function()
@@ -159,7 +159,7 @@ if CLIENT then
 		LDT.BButtons.Construct = vgui.Create("DImageButton", LDT.Frame )
 			LDT.BButtons.Construct:SetPos( 5 , 268 )
 			LDT.BButtons.Construct:SetSize( 155 , 195 )
-			LDT.BButtons.Construct:SetImage( "sbep_icons/Construct.vmt" )
+			LDT.BButtons.Construct:SetImage( "sbep_icons/construct.vmt" )
 			LDT.BButtons.Construct.DoClick = function()
 													local pos = CL.LiftDes.LiftSystem:GetNWInt("ActivePart")
 													pos = pos + 1
@@ -169,7 +169,7 @@ if CLIENT then
 		LDT.BButtons.up = vgui.Create("DImageButton", LDT.Frame )
 			LDT.BButtons.up:SetPos( 45 , 228 )   
 			LDT.BButtons.up:SetSize( 75 , 35 )   
-			LDT.BButtons.up:SetImage( "sbep_icons/ArrowUp.vmt" )
+			LDT.BButtons.up:SetImage( "sbep_icons/arrowup.vmt" )
 			LDT.BButtons.up.DoClick = function()
 													local pos = CL.LiftDes.LiftSystem:GetNWInt("ActivePart")
 													CL.LiftDes.DIR = "UP"
@@ -181,7 +181,7 @@ if CLIENT then
 		LDT.BButtons.down = vgui.Create("DImageButton", LDT.Frame )
 			LDT.BButtons.down:SetPos( 45 , 468 )   
 			LDT.BButtons.down:SetSize( 75 , 35 )   
-			LDT.BButtons.down:SetImage( "sbep_icons/ArrowDown.vmt" )
+			LDT.BButtons.down:SetImage( "sbep_icons/arrowdown.vmt" )
 			LDT.BButtons.down.DoClick = function()
 													local pos = CL.LiftDes.LiftSystem:GetNWInt("ActivePart")
 													--[[if pos == 1 then 
@@ -196,7 +196,7 @@ if CLIENT then
 		LDT.BButtons.inv = vgui.Create("DImageButton", LDT.Frame )
 			LDT.BButtons.inv:SetPos( 45 , 188 )   
 			LDT.BButtons.inv:SetSize( 75 , 35 )   
-			LDT.BButtons.inv:SetImage( "sbep_icons/Invert.vmt" )
+			LDT.BButtons.inv:SetImage( "sbep_icons/invert.vmt" )
 			LDT.BButtons.inv.DoClick = function()
 											RunConsoleCommand( "SBEP_LiftSys_InvertLiftPart_ser" )
 										end
@@ -204,7 +204,7 @@ if CLIENT then
 		LDT.BButtons.RotC = vgui.Create("DImageButton", LDT.Frame )
 			LDT.BButtons.RotC:SetPos( 5 , 188 )   
 			LDT.BButtons.RotC:SetSize( 35 , 35 )
-			LDT.BButtons.RotC:SetImage( "sbep_icons/RotC.vmt" )
+			LDT.BButtons.RotC:SetImage( "sbep_icons/rotc.vmt" )
 			LDT.BButtons.RotC.DoClick = function()
 											RunConsoleCommand( "SBEP_LiftSys_SetLiftPartYaw_ser" , 270 )
 										end
@@ -212,7 +212,7 @@ if CLIENT then
 		LDT.BButtons.RotAC = vgui.Create("DImageButton", LDT.Frame )
 			LDT.BButtons.RotAC:SetPos( 125 , 188 )   
 			LDT.BButtons.RotAC:SetSize( 35 , 35 )
-			LDT.BButtons.RotAC:SetImage( "sbep_icons/RotAC.vmt" )
+			LDT.BButtons.RotAC:SetImage( "sbep_icons/rotac.vmt" )
 			LDT.BButtons.RotAC.DoClick = function()
 											RunConsoleCommand( "SBEP_LiftSys_SetLiftPartYaw_ser" , 90 )
 										end
@@ -220,7 +220,7 @@ if CLIENT then
 		LDT.BButtons.Delete = vgui.Create("DImageButton", LDT.Frame )
 			LDT.BButtons.Delete:SetPos( 125 , 228 )   
 			LDT.BButtons.Delete:SetSize( 35 , 35 )
-			LDT.BButtons.Delete:SetImage( "sbep_icons/Delete.vmt" )
+			LDT.BButtons.Delete:SetImage( "sbep_icons/delete.vmt" )
 			LDT.BButtons.Delete.DoClick = function()
 											RunConsoleCommand( "SBEP_LiftDeletePart_ser" )	
 										end
@@ -234,7 +234,7 @@ if CLIENT then
 		LDT.CButtons.up = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.up:SetPos( 205 , 348 )   
 			LDT.CButtons.up:SetSize( 75 , 35 )   
-			LDT.CButtons.up:SetImage( "sbep_icons/ArrowUp.vmt" )
+			LDT.CButtons.up:SetImage( "sbep_icons/arrowup.vmt" )
 			LDT.CButtons.up.Hold = true
 			LDT.CButtons.up.OnMousePressed  = function() LDT.CButtons.up.Pressed = true  end
 			LDT.CButtons.up.OnMouseReleased = function() LDT.CButtons.up.Pressed = false end
@@ -247,7 +247,7 @@ if CLIENT then
 		LDT.CButtons.down = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.down:SetPos( 205 , 468 )   
 			LDT.CButtons.down:SetSize( 75 , 35 )   
-			LDT.CButtons.down:SetImage( "sbep_icons/ArrowDown.vmt" )
+			LDT.CButtons.down:SetImage( "sbep_icons/arrowdown.vmt" )
 			LDT.CButtons.down.Hold = true
 			LDT.CButtons.down.OnMousePressed  = function() LDT.CButtons.down.Pressed = true  end
 			LDT.CButtons.down.OnMouseReleased = function() LDT.CButtons.down.Pressed = false end
@@ -260,7 +260,7 @@ if CLIENT then
 		LDT.CButtons.left = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.left:SetPos( 165 , 388 )   
 			LDT.CButtons.left:SetSize( 35 , 75 )
-			LDT.CButtons.left:SetImage( "sbep_icons/ArrowLeft.vmt" )
+			LDT.CButtons.left:SetImage( "sbep_icons/arrowleft.vmt" )
 			LDT.CButtons.left.Hold = true
 			LDT.CButtons.left.OnMousePressed  = function() LDT.CButtons.left.Pressed = true  end
 			LDT.CButtons.left.OnMouseReleased = function() LDT.CButtons.left.Pressed = false end
@@ -273,7 +273,7 @@ if CLIENT then
 		LDT.CButtons.right = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.right:SetPos( 285 , 388 )   
 			LDT.CButtons.right:SetSize( 35 , 75 )
-			LDT.CButtons.right:SetImage( "sbep_icons/ArrowRight.vmt" )
+			LDT.CButtons.right:SetImage( "sbep_icons/arrowright.vmt" )
 			LDT.CButtons.right.Hold = true
 			LDT.CButtons.right.OnMousePressed  = function() LDT.CButtons.right.Pressed = true  end
 			LDT.CButtons.right.OnMouseReleased = function() LDT.CButtons.right.Pressed = false end
@@ -286,7 +286,7 @@ if CLIENT then
 		LDT.CButtons.default = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.default:SetPos( 205 , 388 )   
 			LDT.CButtons.default:SetSize( 75 , 75 ) 
-			LDT.CButtons.default:SetImage( "sbep_icons/Camera.vmt" )		
+			LDT.CButtons.default:SetImage( "sbep_icons/camera.vmt" )		
 			LDT.CButtons.default.DoClick = function()
 												LD.SetBaseViewAngles()
 											end
@@ -294,7 +294,7 @@ if CLIENT then
 		LDT.CButtons.Zplus = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.Zplus:SetPos( 285 , 348 )   
 			LDT.CButtons.Zplus:SetSize( 35 , 35 )
-			LDT.CButtons.Zplus:SetImage( "sbep_icons/ZoomIn.vmt" )
+			LDT.CButtons.Zplus:SetImage( "sbep_icons/zoomin.vmt" )
 			LDT.CButtons.Zplus.Hold = true
 			LDT.CButtons.Zplus.OnMousePressed  = function() LDT.CButtons.Zplus.Pressed = true  end
 			LDT.CButtons.Zplus.OnMouseReleased = function() LDT.CButtons.Zplus.Pressed = false end
@@ -307,7 +307,7 @@ if CLIENT then
 		LDT.CButtons.Zminus = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.Zminus:SetPos( 165 , 348 )   
 			LDT.CButtons.Zminus:SetSize( 35 , 35 )
-			LDT.CButtons.Zminus:SetImage( "sbep_icons/ZoomOut.vmt" )
+			LDT.CButtons.Zminus:SetImage( "sbep_icons/zoomout.vmt" )
 			LDT.CButtons.Zminus.Hold = true
 			LDT.CButtons.Zminus.OnMousePressed  = function() LDT.CButtons.Zminus.Pressed = true  end
 			LDT.CButtons.Zminus.OnMouseReleased = function() LDT.CButtons.Zminus.Pressed = false end
@@ -320,7 +320,7 @@ if CLIENT then
 		LDT.CButtons.RotC = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.RotC:SetPos( 165 , 468 )   
 			LDT.CButtons.RotC:SetSize( 35 , 35 )
-			LDT.CButtons.RotC:SetImage( "sbep_icons/RotC.vmt" )
+			LDT.CButtons.RotC:SetImage( "sbep_icons/rotc.vmt" )
 			LDT.CButtons.RotC.DoClick = function()
 												CL.LiftDes.MVYaw = CL.LiftDes.MVYaw - 90
 												LD.ReCalcViewAngles()
@@ -329,7 +329,7 @@ if CLIENT then
 		LDT.CButtons.RotAC = vgui.Create("DImageButton", LDT.Frame )
 			LDT.CButtons.RotAC:SetPos( 285 , 468 )   
 			LDT.CButtons.RotAC:SetSize( 35 , 35 )
-			LDT.CButtons.RotAC:SetImage( "sbep_icons/RotAC.vmt" )
+			LDT.CButtons.RotAC:SetImage( "sbep_icons/rotac.vmt" )
 			LDT.CButtons.RotAC.DoClick = function()
 												CL.LiftDes.MVYaw = CL.LiftDes.MVYaw + 90
 												LD.ReCalcViewAngles()
@@ -680,7 +680,7 @@ function TOOL:LeftClick( trace )
 			LiftSystem_SER = ents.Create( "sbep_elev_system" )
 			LiftSystem_SER:SetPos( startpos + Vector(0,0,4.65))
 			LiftSystem_SER:SetAngles( Angle(0,-90,0) )
-			LiftSystem_SER:SetModel( "models/SmallBridge/Elevators_Small/sbselevp3.mdl" )
+			LiftSystem_SER:SetModel( "models/smallbridge/elevators_small/sbselevp3.mdl" )
 			LiftSystem_SER.Skin = ply:GetInfoNum( "sbep_lift_designer_skin", 0 )
 			LiftSystem_SER:SetNWBool( "Sendable" , true )
 			LiftSystem_SER.PLY		= ply
