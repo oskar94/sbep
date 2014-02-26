@@ -839,7 +839,7 @@ function TOOL.BuildCPanel(panel)
 	
 	local HelpB = vgui.Create( "DButton" )
 		HelpB.DoClick = function()
-								SBEPDoc.OpenPage( "Construction" , "Lift Systems.txt" )
+								--SBEPDoc.OpenPage( "Construction" , "Lift Systems.txt" )
 							end
 		HelpB:SetText( "Lift Designer Help Page" )
 	panel:AddItem( HelpB )
