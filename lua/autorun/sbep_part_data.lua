@@ -16,6 +16,7 @@ LRC1, LRC2, LRC3, LRC4, LRC5, LRC6 - Landing ramps 1 -6
 ESML - Elevator, small
 ELRG - Elevator, large
 INSR - Insert Component
+HNGR - Hangar
 
 Medbridge :MBSH - Medium Bridge, Single Height
 
@@ -987,44 +988,155 @@ are all one -orientation - only.Then open cl_init .lua and make a new entry in t
         },
         ----------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------
-        ["models/smallbridge/hangars/sbdb1l.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb1ls.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb1m.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb1m1.mdl"] = { { type = "SWSH", pos = Vector(-111.6, 0, 0), dir = Angle(0, 180, 0) } },
+        ["models/smallbridge/hangars/sbdb1l.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb1ls.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb1m.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , -167.4 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , 167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb1m1.mdl"] = { 
+			{ type = "SWSH", pos = Vector(-111.6, 0, 0), dir = Angle(0, 180, 0) }  ,
+			{ type = "HNGR" , pos = Vector( 0 , 167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -167.4 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
         ["models/smallbridge/hangars/sbdb1m12.mdl"] = {
             { type = "SWSH", pos = Vector(-111.6, 0, 0), dir = Angle(0, 180, 0) },
-            { type = "SWSH", pos = Vector(-111.6, 0, 130.2), dir = Angle(0, 180, 0) }
-        },
-        ["models/smallbridge/hangars/sbdb1r.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb1rs.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb2l.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb2m.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb2mdw.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb2r.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb3m.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb3mdw.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb3mx.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb3mxdw.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb3side.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb4l.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb4m.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb4mdw.mdl"] = {},
-        ["models/smallbridge/hangars/sbdb4r.mdl"] = {},
+            { type = "SWSH", pos = Vector(-111.6, 0, 130.2), dir = Angle(0, 180, 0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , 167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -167.4 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb1r.mdl"] = {
+			{ type = "HNGR" , pos = Vector( -9.3 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 102.3 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb1rs.mdl"] = {
+			{ type = "HNGR" , pos = Vector( -9.3 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 102.3 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb2l.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb2m.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 167.4 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -167.4 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb2mdw.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 334.8 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -334.8 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 167.4 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , -167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , -167.4 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb2r.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb3m.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 167.4 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -167.4 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb3mdw.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 334.8 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -334.8 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 167.4 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , -167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , -167.4 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb3mx.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 167.4 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -167.4 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb3mxdw.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 334.8 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -334.8 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 167.4 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , -167.4 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , -167.4 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb3side.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb4l.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb4m.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 167.4 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -167.4 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0, 180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb4mdw.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 334.8 , 0 ) , dir = Angle(  0, 0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 0 , -334.8 , 0 ) , dir = Angle(  0, 180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 167.4 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , -167.4 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdb4r.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 0 , 27.9 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0, 180,  0) }
+		},
         ["models/smallbridge/hangars/sbdbcomp1.mdl"] = {
             { type = "SWSH", pos = Vector(-446.4, 0, 0), dir = Angle(0, 180, 0) },
             { type = "SWSH", pos = Vector(-446.4, 0, 130.2), dir = Angle(0, 180, 0) }
         },
         ["models/smallbridge/hangars/sbdbseg1s.mdl"] = {
             { type = "SWSH", pos = Vector(-111.6, 0, 0), dir = Angle(0, 180, 0) },
-            { type = "SWSH", pos = Vector(-111.6, 0, 130.2), dir = Angle(0, 180, 0) }
+            { type = "SWSH", pos = Vector(-111.6, 0, 130.2), dir = Angle(0, 180, 0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , -195.3 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 195.3 , 0 ) , dir = Angle(  0,  0,  0) }
         },
         ["models/smallbridge/hangars/sbdbseg1ss.mdl"] = {
             { type = "SWSH", pos = Vector(-111.6, 0, 0), dir = Angle(0, 180, 0) },
-            { type = "SWSH", pos = Vector(-111.6, 0, 130.2), dir = Angle(0, 180, 0) }
+            { type = "SWSH", pos = Vector(-111.6, 0, 130.2), dir = Angle(0, 180, 0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , -195.3 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 195.3 , 0 ) , dir = Angle(  0,  0,  0) }
         },
-        ["models/smallbridge/hangars/sbdbseg2s.mdl"] = {},
-        ["models/smallbridge/hangars/sbdbseg3s.mdl"] = {},
-        ["models/smallbridge/hangars/sbdbseg4s.mdl"] = {},
+        ["models/smallbridge/hangars/sbdbseg2s.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , -195.3 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 195.3 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , -195.3 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 195.3 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdbseg3s.mdl"] = {
+			{ type = "HNGR" , pos = Vector( 111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , -195.3 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( 111.6 , 195.3 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , -195.3 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 195.3 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
+        ["models/smallbridge/hangars/sbdbseg4s.mdl"] = {
+			{ type = "HNGR" , pos = Vector( -111.6 , 0 , 0 ) , dir = Angle(  0,  0,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , -195.3 , 0 ) , dir = Angle(  0,  180,  0) } ,
+			{ type = "HNGR" , pos = Vector( -111.6 , 195.3 , 0 ) , dir = Angle(  0,  180,  0) }
+		},
         ----------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------
         ["models/smallbridge/life support/sbhullcache.mdl"] = {
@@ -1462,9 +1574,18 @@ are all one -orientation - only.Then open cl_init .lua and make a new entry in t
             { type = "MOD1x1", pos = Vector(-15, 0, 0), dir = Angle(0, 180, 0) }
         },
         ["models/cerus/modbridge/core/sc-111g.mdl"] = { { type = "MOD1x1", pos = Vector(75, 0, 0), dir = Angle(0, 0, 0) } },
-        ["models/cerus/modbridge/core/g-211s.mdl"] = { { type = "MOD1x1", pos = Vector(-75, 0, 0), dir = Angle(0, 180, 0) } },
-        ["models/cerus/modbridge/core/bridgeg-211.mdl"] = { { type = "MOD1x1", pos = Vector(-150, 0, 0), dir = Angle(0, 180, 0) } },
-        ["models/cerus/modbridge/core/g-111wd.mdl"] = { { type = "MOD1x1", pos = Vector(0, 0, 0), dir = Angle(0, 90, 0) } },
+        ["models/cerus/modbridge/core/g-211s.mdl"] = { 
+			{ type = "MOD1x1", pos = Vector(-75, 0, 0), dir = Angle(0, 180, 0) } ,
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
+        ["models/cerus/modbridge/core/bridgeg-211.mdl"] = { 
+			{ type = "MOD1x1", pos = Vector(-150, 0, 0), dir = Angle(0, 180, 0) } ,
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
+        ["models/cerus/modbridge/core/g-111wd.mdl"] = { 
+			{ type = "MOD1x1", pos = Vector(0, 0, 0), dir = Angle(0, 90, 0) } , 
+			{ type = "INSR", pos = Vector(0, -50, 0), dir = Angle(0, 0, 0) }
+		},
         ["models/cerus/modbridge/misc/elevator/eb111.mdl"] = {
             { type = "MOD1x1", pos = Vector(0, 75, 75), dir = Angle(0, 90, 0) },
             { type = "MOD1x1", pos = Vector(0, -75, 75), dir = Angle(0, 270, 0) },
@@ -1557,8 +1678,14 @@ are all one -orientation - only.Then open cl_init .lua and make a new entry in t
             { type = "MOD2x1", pos = Vector(0, 0, 0), dir = Angle(0, 90, 0) },
             { type = "MOD2x1", pos = Vector(0, 0, 0), dir = Angle(0, 270, 0) }
         },
-        ["models/cerus/modbridge/core/g-221s.mdl"] = { { type = "MOD2x1", pos = Vector(-75, 0, 0), dir = Angle(0, 180, 0) } },
-        ["models/cerus/modbridge/core/g-221.mdl"] = { { type = "MOD2x1", pos = Vector(150, 0, 0), dir = Angle(0, 0, 0) } },
+        ["models/cerus/modbridge/core/g-221s.mdl"] = { 
+			{ type = "MOD2x1", pos = Vector(-75, 0, 0), dir = Angle(0, 180, 0) } ,
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
+        ["models/cerus/modbridge/core/g-221.mdl"] = { 
+			{ type = "MOD2x1", pos = Vector(150, 0, 0), dir = Angle(0, 0, 0) } ,
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
 
         ----------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------
@@ -1598,9 +1725,18 @@ are all one -orientation - only.Then open cl_init .lua and make a new entry in t
             { type = "MOD3x1", pos = Vector(0, 0, 0), dir = Angle(0, 90, 0) },
             { type = "MOD3x1", pos = Vector(0, 0, 0), dir = Angle(0, 270, 0) }
         },
-        ["models/cerus/modbridge/core/g-231s.mdl"] = { { type = "MOD3x1", pos = Vector(-75, 0, 0), dir = Angle(0, 180, 0) } },
-        ["models/cerus/modbridge/core/g-231w.mdl"] = { { type = "MOD3x1", pos = Vector(150, 0, 0), dir = Angle(0, 0, 0) } },
-        ["models/cerus/modbridge/core/g-231r.mdl"] = { { type = "MOD3x1", pos = Vector(-150, 0, 0), dir = Angle(0, 180, 0) } },
+        ["models/cerus/modbridge/core/g-231s.mdl"] = { 
+			{ type = "MOD3x1", pos = Vector(-75, 0, 0), dir = Angle(0, 180, 0) } ,
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
+        ["models/cerus/modbridge/core/g-231w.mdl"] = { 
+			{ type = "MOD3x1", pos = Vector(150, 0, 0), dir = Angle(0, 0, 0) } ,
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
+        ["models/cerus/modbridge/core/g-231r.mdl"] = { 
+			{ type = "MOD3x1", pos = Vector(-150, 0, 0), dir = Angle(0, 180, 0) } ,
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
         ["models/cerus/modbridge/core/sc-131g2.mdl"] = { { type = "MOD3x1", pos = Vector(75, 0, 0), dir = Angle(0, 0, 0) } },
         ["models/cerus/modbridge/core/sc-131g3.mdl"] = { { type = "MOD3x1", pos = Vector(75, 0, 0), dir = Angle(0, 0, 0) } },
         ["models/cerus/modbridge/core/sc-131g.mdl"] = { { type = "MOD3x1", pos = Vector(75, 0, 0), dir = Angle(0, 0, 0) } },
@@ -1665,6 +1801,32 @@ are all one -orientation - only.Then open cl_init .lua and make a new entry in t
         },
         ["models/cerus/modbridge/misc/doors/door33a.mdl"] = { { type = "MOD3x2e", pos = Vector(0, 0, 0), dir = Angle(-90, 0, 0) } },
 
+        ----------------------------------------------------------------------------------------------------------------------------------------
+        ----------------------------------------------------------------------------------------------------------------------------------------
+		["models/cerus/modbridge/plate/bp111wd.mdl"] = {
+			{ type = "INSR", pos = Vector(0, -50, 0), dir = Angle(0, 180, 0) }
+		},
+		["models/cerus/modbridge/plate/bp211s.mdl"] = {
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 180, 0) }
+		},
+		["models/cerus/modbridge/plate/bp221s.mdl"] = {
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 180, 0) }
+		},
+		["models/cerus/modbridge/plate/bp231s.mdl"] = {
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 180, 0) }
+		},
+		["models/cerus/modbridge/plate/bp211.mdl"] = {
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 0, 0) }
+		},
+		["models/cerus/modbridge/plate/bp221.mdl"] = {
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 180, 0) }
+		},
+		["models/cerus/modbridge/plate/bp231g.mdl"] = {
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 180, 0) }
+		},
+		["models/cerus/modbridge/plate/bp231w.mdl"] = {
+			{ type = "INSR", pos = Vector(0, 0, 0), dir = Angle(0, 180, 0) }
+		},
         ----------------------------------------------------------------------------------------------------------------------------------------
         ----------------------------------------------------------------------------------------------------------------------------------------
         ["models/cerus/modbridge/core/tc-131.mdl"] = {
@@ -1807,20 +1969,20 @@ local MODB_PAD = {
                                                                   { type = "MOD1x1" , pos = Vector(    0,    75,    0) , dir = Angle(  0, 90,  0) } } ,
   [ "models/cerus/modbridge/core/spartan/s-111.mdl"         ] = { { type = "MOD1x1" , pos = Vector(   75,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
                                                                   { type = "MOD1x1" , pos = Vector(  -75,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
-  [ "models/cerus/modbridge/core/spartan/s-211.mdl"         ] = { { type = "MOD1x1" , pos = Vector(  225,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
-                                                                  { type = "MOD1x1" , pos = Vector(  -75,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
+  [ "models/cerus/modbridge/core/spartan/s-211.mdl"         ] = { { type = "MOD1x1" , pos = Vector(  150,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
+                                                                  { type = "MOD1x1" , pos = Vector( -150,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
   [ "models/cerus/modbridge/core/spartan/s-311.mdl"         ] = { { type = "MOD1x1" , pos = Vector(  225,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
                                                                   { type = "MOD1x1" , pos = Vector( -225,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
   [ "models/cerus/modbridge/core/spartan/s-121.mdl"         ] = { { type = "MOD2x1" , pos = Vector(   75,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
                                                                   { type = "MOD2x1" , pos = Vector(  -75,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
   [ "models/cerus/modbridge/core/spartan/s-221.mdl"         ] = { { type = "MOD2x1" , pos = Vector(  150,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
                                                                   { type = "MOD2x1" , pos = Vector( -150,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
-  [ "models/cerus/modbridge/core/spartan/s-321.mdl"         ] = { { type = "MOD2x1" , pos = Vector(  300,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
-                                                                  { type = "MOD2x1" , pos = Vector( -150,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
+  [ "models/cerus/modbridge/core/spartan/s-321.mdl"         ] = { { type = "MOD2x1" , pos = Vector(  225,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
+                                                                  { type = "MOD2x1" , pos = Vector( -225,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
   [ "models/cerus/modbridge/core/spartan/s-131.mdl"         ] = { { type = "MOD3x1" , pos = Vector(   75,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
                                                                   { type = "MOD3x1" , pos = Vector(  -75,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
-  [ "models/cerus/modbridge/core/spartan/s-231.mdl"         ] = { { type = "MOD3x1" , pos = Vector(   75,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
-                                                                  { type = "MOD3x1" , pos = Vector( -225,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
+  [ "models/cerus/modbridge/core/spartan/s-231.mdl"         ] = { { type = "MOD3x1" , pos = Vector(  150,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
+                                                                  { type = "MOD3x1" , pos = Vector( -150,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
   [ "models/cerus/modbridge/core/spartan/s-331.mdl"	        ] = { { type = "MOD3x1" , pos = Vector(  225,    0 ,    0) , dir = Angle(  0,  0,  0) } ,
                                                                   { type = "MOD3x1" , pos = Vector( -225,    0 ,    0) , dir = Angle(  0,180,  0) } } ,
   [ "models/cerus/modbridge/core/prefab/crew_331.mdl"	      ] = { { type = "MOD1x1" , pos = Vector(  225,    0 ,    0) , dir = Angle(  0,  0,  0) } ,

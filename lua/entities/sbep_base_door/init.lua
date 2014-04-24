@@ -75,13 +75,13 @@ DTT[ "Door_Sly1"	]	= { { model = "models/slyfo/slyadoor1.mdl" ,	UD = 2 , OD = 0.
 		OS = { [0] = "Doors.Move14" , [1.80] = "Doors.FullOpen9" } ,
 		CS = { [0] = "Doors.Move14" , [1.80] = "Doors.FullOpen9" } } }
 
-DTT[ "Door_SlyDHatch"	]	= { { model = "models/slyfo/doublehatchdoor.mdl" 	,	UD = 2 , OD = 1   , CD = 1 	, 
+DTT[ "Door_SlyDHatch"	]	= { { model = "models/slyfo/doublehatchdoor3.mdl" 	,	UD = 2 , OD = 2   , CD = 1 	, 
+		OS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } ,
+		CS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } } ,
+				{ model = "models/slyfo/doublehatchdoor.mdl" 	,	UD = 2 , OD = 1   , CD = 1 	, 
 		OS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } ,
 		CS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } } ,
 				{ model = "models/slyfo/doublehatchdoor2.mdl" 	,	UD = 2 , OD = 1   , CD = 1 	, 
-		OS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } ,
-		CS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } } ,
-				{ model = "models/slyfo/doublehatchdoor3.mdl" 	,	UD = 2 , OD = 2   , CD = 1 	, 
 		OS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } ,
 		CS = { [0] = "Doors.Move14" , [1.95] = "Doors.FullOpen9" } } }
 

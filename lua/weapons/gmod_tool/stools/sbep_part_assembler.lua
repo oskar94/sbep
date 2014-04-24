@@ -138,78 +138,82 @@ end
 if CLIENT then
 	CreateClientConVar("sbep_part_assembler_nocollide", 0, true, true)
 	CreateClientConVar("sbep_part_assembler_weld", 0, true, true)
-
+	
 	language.Add( "tool.sbep_part_assembler.name" , "Part Assembly Tool" )
 	language.Add( "tool.sbep_part_assembler.desc" , "Easily assemble SBEP parts. Tingle's Remake" )
 	language.Add( "tool.sbep_part_assembler.0"	  , "(1) Left-click an attachment point. Right-click to show/hide attachment points. Reload to hide all attachment points."						)
 	language.Add( "tool.sbep_part_assembler.1"	  , "(2) Left-click another attachement point to connect to. Right-click to show/hide attachment points. Reload to cancel." )
 	language.Add( "undone_SBEP Part Assembly"	  , "Undone SBEP Part Assembly" )
-
+	
 	local PAD = list.Get( "SBEP_PartAssemblyData" )
 	local xMaterialsInfo = {
-	SWSH = { Material( "sprites/sbep_assembler_tool/swshblue"		) , { 42 , 30 } } ,
+	SWSH = { Material( "sprites/sbep_assembler_tool/swshblue"			) , { 42 , 30 } } ,
 	SWSH_MO = { Material( "sprites/sbep_assembler_tool/swshblue_mo"		) , { 42 , 30 } } ,
 	SWSH_S = { Material( "sprites/sbep_assembler_tool/swshblue_s"		) , { 42 , 30 } } ,
-	SWDH = { Material( "sprites/sbep_assembler_tool/swdhgreen"		) , { 21 , 30 } } ,
-	SWDH_MO = { Material( "sprites/sbep_assembler_tool/swdhgreen_mo"		) , { 21 , 30 } } ,
+	SWDH = { Material( "sprites/sbep_assembler_tool/swdhgreen"			) , { 21 , 30 } } ,
+	SWDH_MO = { Material( "sprites/sbep_assembler_tool/swdhgreen_mo"	) , { 21 , 30 } } ,
 	SWDH_S = { Material( "sprites/sbep_assembler_tool/swdhgreen_s"		) , { 21 , 30 } } ,
-	DWSH = { Material( "sprites/sbep_assembler_tool/dwshred"		) , { 42 , 15 } } ,
+	DWSH = { Material( "sprites/sbep_assembler_tool/dwshred"			) , { 42 , 15 } } ,
 	DWSH_MO = { Material( "sprites/sbep_assembler_tool/dwshred_mo"		) , { 42 , 15 } } ,
 	DWSH_S = { Material( "sprites/sbep_assembler_tool/dwshred_s"		) , { 42 , 15 } } ,
-	DWDH = { Material( "sprites/sbep_assembler_tool/dwdhyellow"		) , { 42 , 30 } } ,
-	DWDH_MO = { Material( "sprites/sbep_assembler_tool/dwdhyellow_mo"		) , { 42 , 30 } } ,
+	DWDH = { Material( "sprites/sbep_assembler_tool/dwdhyellow"			) , { 42 , 30 } } ,
+	DWDH_MO = { Material( "sprites/sbep_assembler_tool/dwdhyellow_mo"	) , { 42 , 30 } } ,
 	DWDH_S = { Material( "sprites/sbep_assembler_tool/dwdhyellow_s"		) , { 42 , 30 } } ,
-
-	INSR = { Material( "sprites/sbep_assembler_tool/insert"			) , { 42 , 30 } } ,
-	INSR_MO = { Material( "sprites/sbep_assembler_tool/swshblue_mo"		) , { 42 , 30 } } ,
-	INSR_S = { Material( "sprites/sbep_assembler_tool/swshblue_s"		) , { 42 , 30 } } ,	
-
-	ESML = { Material( "sprites/sbep_assembler_tool/esml"			) , { 35 , 35 } } ,
+	
+	INSR = { Material( "sprites/sbep_assembler_tool/insert"				) , { 42 , 20 } } ,
+	INSR_MO = { Material( "sprites/sbep_assembler_tool/insert_mo"		) , { 42 , 20 } } ,
+	INSR_S = { Material( "sprites/sbep_assembler_tool/insert_s"			) , { 42 , 20 } } ,	
+	
+	HNGR = { Material( "sprites/sbep_assembler_tool/hangarsnap"			) , { 35 , 35 } } ,
+	HNGR_MO = { Material( "sprites/sbep_assembler_tool/hangarsnap_mo"	) , { 35 , 35 } } ,
+	HNGR_S = { Material( "sprites/sbep_assembler_tool/hangarsnap_s"		) , { 35 , 35 } } ,	
+	
+	ESML = { Material( "sprites/sbep_assembler_tool/esml"				) , { 35 , 35 } } ,
 	ESML_MO = { Material( "sprites/sbep_assembler_tool/esml_mo"			) , { 35 , 35 } } ,
 	ESML_S = { Material( "sprites/sbep_assembler_tool/esml_s"			) , { 35 , 35 } } ,
-	ELRG = { Material( "sprites/sbep_assembler_tool/elrg"			) , { 35 , 35 } } ,
+	ELRG = { Material( "sprites/sbep_assembler_tool/elrg"				) , { 35 , 35 } } ,
 	ELRG_MO = { Material( "sprites/sbep_assembler_tool/elrg_mo"			) , { 35 , 35 } } ,
 	ELRG_S = { Material( "sprites/sbep_assembler_tool/elrg_s"			) , { 35 , 35 } } ,
 	
-	LRC1 = { Material( "sprites/sbep_assembler_tool/lrc1"			) , { 42 , 30 } } ,
+	LRC1 = { Material( "sprites/sbep_assembler_tool/lrc1"				) , { 42 , 30 } } ,
 	LRC1_MO = { Material( "sprites/sbep_assembler_tool/lrc1_mo"			) , { 42 , 30 } } ,
 	LRC1_S = { Material( "sprites/sbep_assembler_tool/lrc1_s"			) , { 42 , 30 } } ,
-	LRC2 = { Material( "sprites/sbep_assembler_tool/lrc1"			) , { 42 , 30 } } ,
+	LRC2 = { Material( "sprites/sbep_assembler_tool/lrc1"				) , { 42 , 30 } } ,
 	LRC2_MO = { Material( "sprites/sbep_assembler_tool/lrc1_mo"			) , { 42 , 30 } } ,
 	LRC2_S = { Material( "sprites/sbep_assembler_tool/lrc1_s"			) , { 42 , 30 } } ,
-	LRC3 = { Material( "sprites/sbep_assembler_tool/lrc3"			) , { 42 , 30 } } ,
+	LRC3 = { Material( "sprites/sbep_assembler_tool/lrc3"				) , { 42 , 30 } } ,
 	LRC3_MO = { Material( "sprites/sbep_assembler_tool/lrc3_mo"			) , { 42 , 30 } } ,
 	LRC3_S = { Material( "sprites/sbep_assembler_tool/lrc3_s"			) , { 42 , 30 } } ,
-	LRC4 = { Material( "sprites/sbep_assembler_tool/lrc3"			) , { 42 , 30 } } ,
+	LRC4 = { Material( "sprites/sbep_assembler_tool/lrc3"				) , { 42 , 30 } } ,
 	LRC4_MO = { Material( "sprites/sbep_assembler_tool/lrc3_mo"			) , { 42 , 30 } } ,
 	LRC4_S = { Material( "sprites/sbep_assembler_tool/lrc3_s"			) , { 42 , 30 } } ,
-	LRC5 = { Material( "sprites/sbep_assembler_tool/lrc5"			) , { 21 , 30 } } ,
+	LRC5 = { Material( "sprites/sbep_assembler_tool/lrc5"				) , { 21 , 30 } } ,
 	LRC5_MO = { Material( "sprites/sbep_assembler_tool/lrc5_mo"			) , { 21 , 30 } } ,
 	LRC5_S = { Material( "sprites/sbep_assembler_tool/lrc5_s"			) , { 21 , 30 } } ,
-	LRC6 = { Material( "sprites/sbep_assembler_tool/lrc5"			) , { 21 , 30 } } ,
+	LRC6 = { Material( "sprites/sbep_assembler_tool/lrc5"				) , { 21 , 30 } } ,
 	LRC6_MO = { Material( "sprites/sbep_assembler_tool/lrc5_mo"			) , { 21 , 30 } } ,
 	LRC6_S = { Material( "sprites/sbep_assembler_tool/lrc5_s"			) , { 21 , 30 } } ,
 	
-	MBSH = { Material( "sprites/sbep_assembler_tool/mbsh"			) , { 35 , 35 } } ,
+	MBSH = { Material( "sprites/sbep_assembler_tool/mbsh"				) , { 35 , 35 } } ,
 	MBSH_MO = { Material( "sprites/sbep_assembler_tool/mbsh_mo"			) , { 35 , 35 } } ,
 	MBSH_S = { Material( "sprites/sbep_assembler_tool/mbsh_s"			) , { 35 , 35 } } ,
 		
-	MOD1x1 = { Material( "sprites/sbep_assembler_tool/mod1x1"		) , { 35 , 35 } } ,
+	MOD1x1 = { Material( "sprites/sbep_assembler_tool/mod1x1"			) , { 35 , 35 } } ,
 	MOD1x1_MO = { Material( "sprites/sbep_assembler_tool/mod1x1_mo"		) , { 35 , 35 } } ,
 	MOD1x1_S = { Material( "sprites/sbep_assembler_tool/mod1x1_s"		) , { 35 , 35 } } ,
-	MOD2x1 = { Material( "sprites/sbep_assembler_tool/mod2x1"		) , { 35 , 35 } } ,
+	MOD2x1 = { Material( "sprites/sbep_assembler_tool/mod2x1"			) , { 35 , 35 } } ,
 	MOD2x1_MO = { Material( "sprites/sbep_assembler_tool/mod2x1_mo"		) , { 35 , 35 } } ,
 	MOD2x1_S = { Material( "sprites/sbep_assembler_tool/mod2x1_s"		) , { 35 , 35 } } ,
-	MOD3x1 = { Material( "sprites/sbep_assembler_tool/mod3x1"		) , { 35 , 35 } } ,
+	MOD3x1 = { Material( "sprites/sbep_assembler_tool/mod3x1"			) , { 35 , 35 } } ,
 	MOD3x1_MO = { Material( "sprites/sbep_assembler_tool/mod3x1_mo"		) , { 35 , 35 } } ,
 	MOD3x1_S = { Material( "sprites/sbep_assembler_tool/mod3x1_s"		) , { 35 , 35 } } ,
-	MOD3x2 = { Material( "sprites/sbep_assembler_tool/mod3x2"		) , { 35 , 35 } } ,
+	MOD3x2 = { Material( "sprites/sbep_assembler_tool/mod3x2"			) , { 35 , 35 } } ,
 	MOD3x2_MO = { Material( "sprites/sbep_assembler_tool/mod3x2_mo"		) , { 35 , 35 } } ,
 	MOD3x2_S = { Material( "sprites/sbep_assembler_tool/mod3x2_s"		) , { 35 , 35 } } ,
-	MOD1x1e = { Material( "sprites/sbep_assembler_tool/esml"		) , { 35 , 35 } } ,
+	MOD1x1e = { Material( "sprites/sbep_assembler_tool/esml"			) , { 35 , 35 } } ,
 	MOD1x1e_MO = { Material( "sprites/sbep_assembler_tool/esml_mo"		) , { 35 , 35 } } ,
 	MOD1x1e_S = { Material( "sprites/sbep_assembler_tool/esml_s"		) , { 35 , 35 } } ,
-	MOD3x2e = { Material( "sprites/sbep_assembler_tool/elrg"		) , { 35 , 35 } } ,
+	MOD3x2e = { Material( "sprites/sbep_assembler_tool/elrg"			) , { 35 , 35 } } ,
 	MOD3x2e_MO = { Material( "sprites/sbep_assembler_tool/elrg_mo"		) , { 35 , 35 } } ,
 	MOD3x2e_S = { Material( "sprites/sbep_assembler_tool/elrg_s"		) , { 35 , 35 } } }
 	
